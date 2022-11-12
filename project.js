@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         singleCard.appendChild(typeOnCard)
         pokemonContainer.appendChild(singleCard)
         typeOnCard.innerHTML = `${singlePokemon.type}`
+        nameOfPokemonOnCard.innerHTML = singlePokemon.name
     }
     function removeChildren(container) {
         while (container.firstChild) {
