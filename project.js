@@ -18,6 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const likesOnCard = document.createElement("p")
         const typeOnCard = document.createElement("p")
 
+        singleCard.classList.add("card")
+        singleCard.appendChild(nameOfPokemonOnCard)
+        singleCard.appendChild(btnOnCard)
+        singleCard.appendChild(imgOnCard)
+        singleCard.appendChild(likesOnCard)
+        singleCard.appendChild(typeOnCard)
     }
     function removeChildren(container) {
         while (container.firstChild) {
