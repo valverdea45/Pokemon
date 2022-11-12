@@ -50,6 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 "likes": singlePokemon.likes
             })
         })
+            .then(data => data.json())
+            .then(pokemon => console.log(pokemon))
+    }
     }
     function removeChildren(container) {
         while (container.firstChild) {
