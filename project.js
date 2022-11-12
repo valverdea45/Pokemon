@@ -9,4 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
             dropDown(allPokemon)
             createYourOwn(allPokemon)
         })
+    function updateCards(allPokemon) {
+        const pokemonContainer = document.querySelector("#Pokemon-collection")
+        removeChildren(pokemonContainer)
+        allPokemon.forEach(createNewCard)
+    }
 })
