@@ -28,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
         typeOnCard.innerHTML = `${singlePokemon.type}`
         nameOfPokemonOnCard.innerHTML = singlePokemon.name
         likesOnCard.innerHTML = `${singlePokemon.likes} like(s)`
+        imgOnCard.setAttribute("src", singlePokemon.image)
+        imgOnCard.classList.add("pokemon-avatar")
     }
     function removeChildren(container) {
         while (container.firstChild) {
