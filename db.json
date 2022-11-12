@@ -1,24 +1,60 @@
 {
-    "Pokemon": [
-        {
-            "id": 1,
-            "name": "Mew"
-        },
-        {
-            "id": 2,
-            "name": "Lucario"
-        },
-        {
-            "id": 3,
-            "name": "Pikachu"
-        },
-        {
-            "id": 4,
-            "name": "squirtle"
-        },
-        {
-            "id": 5,
-            "name": "Mudkip"
-        }
-    ]
+  "Pokemon": [
+    {
+      "id": 1,
+      "name": "Mew",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/151.png",
+      "likes": 16,
+      "type": "Psychic"
+    },
+    {
+      "id": 2,
+      "name": "Lucario",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/448.png",
+      "likes": 32,
+      "type": "Fighting"
+    },
+    {
+      "id": 3,
+      "name": "Pikachu",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
+      "likes": 5,
+      "type": "Electric"
+    },
+    {
+      "id": 4,
+      "name": "squirtle",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",
+      "likes": 510,
+      "type": "Water"
+    },
+    {
+      "id": 5,
+      "name": "Mudkip",
+      "image": "https://static.wikia.nocookie.net/pokemon/images/3/32/258Mudkip_AG_anime_2.png/revision/latest/scale-to-width-down/250?cb=20150102063741",
+      "likes": 10037,
+      "type": "Water"
+    },
+    {
+      "id": 6,
+      "name": "Turtwig",
+      "image": "https://archives.bulbagarden.net/media/upload/thumb/5/5c/387Turtwig.png/250px-387Turtwig.png",
+      "likes": 4,
+      "type": "Grass"
+    },
+    {
+      "id": 7,
+      "name": "Arceus",
+      "image": "https://archives.bulbagarden.net/media/upload/thumb/f/fc/493Arceus.png/1200px-493Arceus.png",
+      "likes": 0,
+      "type": "Normal"
+    },
+    {
+      "id": 8,
+      "name": "Uknown",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/201.png",
+      "likes": 13,
+      "type": "Normal"
+    }
+  ]
 }
