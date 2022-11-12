@@ -57,6 +57,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const formInput = document.querySelector("#form")
         formInput.addEventListener("submit", (e) => {
             e.preventDefault()
+            const nameInput = document.querySelector("#pokemonName")
+            const imgInput = document.querySelector("#pokemonImg")
+            const typeInput = document.querySelector("#pokemonType")
     }
         })
     function removeChildren(container) {
