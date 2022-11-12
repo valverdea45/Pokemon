@@ -22,3 +22,15 @@
     height: 12rem;
     width: auto;
 }
+
+button {
+    position: relative;
+    background-color: #e04b52;
+    border: none;
+    border-radius: 5px;
+    height: 3rem;
+    width: max-content;
+    color: whitesmoke;
+    font-size: 18px;
+    justify-self: center;
+}
