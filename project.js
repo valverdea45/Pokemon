@@ -67,6 +67,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function dropDown(allPokemon) {
         const dropDownElement = document.querySelector("#pokemon-dropdown")
         dropDownElement.addEventListener("change", (e) => {
+            if (e.target.value === "Default") {
+                updateCards(allPokemon)
+                return
         })
     }
 })
