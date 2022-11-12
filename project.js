@@ -67,6 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 likes: 0,
                 type: typeInput.value
     }
+            fetch(`http://localhost:3000/Pokemon`, {
+                method: `POST`,
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(objToBeSent)
         })
     function removeChildren(container) {
         while (container.firstChild) {
