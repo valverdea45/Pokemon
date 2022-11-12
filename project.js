@@ -64,4 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
         removeChildren(pokemonContainer)
         allPokemon.forEach(createNewCard)
     }
+    function dropDown(allPokemon) {
+    }
 })
