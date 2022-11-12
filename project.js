@@ -65,5 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
         allPokemon.forEach(createNewCard)
     }
     function dropDown(allPokemon) {
+        const dropDownElement = document.querySelector("#pokemon-dropdown")
     }
 })
