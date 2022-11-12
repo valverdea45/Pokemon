@@ -66,5 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     function dropDown(allPokemon) {
         const dropDownElement = document.querySelector("#pokemon-dropdown")
+        dropDownElement.addEventListener("change", (e) => {
+        })
     }
 })
