@@ -17,3 +17,8 @@
 .row.centered {
     justify-content: center;
 }
+.pokemon-avatar {
+    justify-self: center;
+    height: 12rem;
+    width: auto;
+}
