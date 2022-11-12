@@ -74,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const filteredTypes = allPokemon.filter((pokemon) => {
                 return pokemon.type === e.target.value
             })
+            updateCards(filteredTypes)
         })
     }
 })
