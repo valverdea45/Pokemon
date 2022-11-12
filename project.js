@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(pokemon => console.log(pokemon))
     }
     function createYourOwn(allPokemon) {
+        const formInput = document.querySelector("#form")
     }
     function removeChildren(container) {
         while (container.firstChild) {
