@@ -9,6 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
             dropDown(allPokemon)
             createYourOwn(allPokemon)
         })
+    function removeChildren(container) {
+        while (container.firstChild) {
+            container.removeChild(container.firstChild)
+        }
+    }
     function updateCards(allPokemon) {
         const pokemonContainer = document.querySelector("#Pokemon-collection")
         removeChildren(pokemonContainer)
