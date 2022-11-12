@@ -9,6 +9,16 @@ document.addEventListener("DOMContentLoaded", () => {
             dropDown(allPokemon)
             createYourOwn(allPokemon)
         })
+    function createNewCard(singlePokemon) {
+        const singleCard = document.createElement("div")
+        const pokemonContainer = document.querySelector("#Pokemon-collection")
+        const nameOfPokemonOnCard = document.createElement("h2")
+        const btnOnCard = document.createElement("button")
+        const imgOnCard = document.createElement("img")
+        const likesOnCard = document.createElement("p")
+        const typeOnCard = document.createElement("p")
+
+    }
     function removeChildren(container) {
         while (container.firstChild) {
             container.removeChild(container.firstChild)
