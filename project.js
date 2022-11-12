@@ -33,6 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
         btnOnCard.classList.add("like-btn")
         btnOnCard.setAttribute("id", singlePokemon.id)
         btnOnCard.innerHTML = "Give them a like!"
+        btnOnCard.addEventListener("click", () => {
+            singlePokemon.likes += 1
+            likesOnCard.innerHTML = `${singlePokemon.likes} like(s)`
+            updateLikes(singlePokemon)
+        })
     }
     function removeChildren(container) {
         while (container.firstChild) {
