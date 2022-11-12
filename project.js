@@ -1,1 +1,4 @@
-console.log("hello world")
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Dom has loaded")
+
+})
