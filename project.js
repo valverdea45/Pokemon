@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(data => data.json())
             .then(pokemon => console.log(pokemon))
     }
+    function createYourOwn(allPokemon) {
     }
     function removeChildren(container) {
         while (container.firstChild) {
