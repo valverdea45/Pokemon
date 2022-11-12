@@ -40,6 +40,16 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
     function updateLikes(singlePokemon) {
+        fetch(`http://localhost:3000/Pokemon/${singlePokemon.id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify({
+                "likes": singlePokemon.likes
+            })
+        })
     }
     function removeChildren(container) {
         while (container.firstChild) {
