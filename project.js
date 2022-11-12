@@ -70,6 +70,10 @@ document.addEventListener("DOMContentLoaded", () => {
             if (e.target.value === "Default") {
                 updateCards(allPokemon)
                 return
+            }
+            const filteredTypes = allPokemon.filter((pokemon) => {
+                return pokemon.type === e.target.value
+            })
         })
     }
 })
