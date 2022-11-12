@@ -31,6 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
         imgOnCard.setAttribute("src", singlePokemon.image)
         imgOnCard.classList.add("pokemon-avatar")
         btnOnCard.classList.add("like-btn")
+        btnOnCard.setAttribute("id", singlePokemon.id)
+        btnOnCard.innerHTML = "Give them a like!"
     }
     function removeChildren(container) {
         while (container.firstChild) {
