@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         singleCard.appendChild(imgOnCard)
         singleCard.appendChild(likesOnCard)
         singleCard.appendChild(typeOnCard)
+        pokemonContainer.appendChild(singleCard)
     }
     function removeChildren(container) {
         while (container.firstChild) {
