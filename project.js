@@ -74,6 +74,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
                 body: JSON.stringify(objToBeSent)
         })
+                .then(data => data.json())
+                .then(pokemon => createNewCard(pokemon))
+        })
+    }
     function removeChildren(container) {
         while (container.firstChild) {
             container.removeChild(container.firstChild)
