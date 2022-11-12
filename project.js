@@ -60,6 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
             const nameInput = document.querySelector("#pokemonName")
             const imgInput = document.querySelector("#pokemonImg")
             const typeInput = document.querySelector("#pokemonType")
+            const objToBeSent = {
+                id: allPokemon.length + 1,
+                name: `${nameInput.value}`,
+                image: imgInput.value,
+                likes: 0,
+                type: typeInput.value
     }
         })
     function removeChildren(container) {
