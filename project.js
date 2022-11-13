@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then((allPokemon) => {
             console.log("All pokemon have loaded")
             updateCards(allPokemon)
+            updateDropDownWindow(allPokemon)
             dropDown(allPokemon)
             createYourOwn(allPokemon)
         })
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         singleCard.appendChild(imgOnCard)
         singleCard.appendChild(likesOnCard)
         singleCard.appendChild(typeOnCard)
+
         pokemonContainer.appendChild(singleCard)
         typeOnCard.innerHTML = `${singlePokemon.type}`
         nameOfPokemonOnCard.innerHTML = singlePokemon.name
@@ -60,20 +62,25 @@ document.addEventListener("DOMContentLoaded", () => {
             const nameInput = document.querySelector("#pokemonName")
             const imgInput = document.querySelector("#pokemonImg")
             const typeInput = document.querySelector("#pokemonType")
+         
             const objToBeSent = {
                 id: allPokemon.length + 1,
                 name: `${nameInput.value}`,
                 image: imgInput.value,
                 likes: 0,
                 type: typeInput.value
-    }
+            }   
+            const newList = allPokemon.concat(objToBeSent)
+            updateDropDownWindow(newList)
+            dropDown(newList)
+            
             fetch(`http://localhost:3000/Pokemon`, {
                 method: `POST`,
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(objToBeSent)
-        })
+            })
                 .then(data => data.json())
                 .then(pokemon => createNewCard(pokemon))
         })
@@ -88,10 +95,32 @@ document.addEventListener("DOMContentLoaded", () => {
         removeChildren(pokemonContainer)
         allPokemon.forEach(createNewCard)
     }
+    function updateDropDownWindow(allPokemon) {
+        const dropDownContainer = document.querySelector("#pokemon-dropdown")
+        removeChildren(dropDownContainer)
+        const pokemonTypes = allPokemon.map((pokemon) => {
+            return pokemon.type
+        })
+        const typeSet = new Set(pokemonTypes)
+        const types = Array.from(typeSet)
+
+        const singleOption = document.createElement("option")
+        singleOption.innerHTML = `All Types`
+        dropDownContainer.appendChild(singleOption)
+
+        types.forEach((singleType) => {
+            const singleOption = document.createElement("option")
+            singleOption.innerHTML = `${singleType}`
+            dropDownContainer.appendChild(singleOption)
+
+        })
+
+
+    }
     function dropDown(allPokemon) {
         const dropDownElement = document.querySelector("#pokemon-dropdown")
         dropDownElement.addEventListener("change", (e) => {
-            if (e.target.value === "Default") {
+            if (e.target.value === "All Types") {
                 updateCards(allPokemon)
                 return
             }

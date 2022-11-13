@@ -55,6 +55,27 @@
       "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/201.png",
       "likes": 13,
       "type": "Normal"
+    },
+    {
+      "id": 9,
+      "name": "Sylveon",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/700.png",
+      "likes": 5,
+      "type": "Fairy"
+    },
+    {
+      "id": 10,
+      "name": "Metagross",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/376.png",
+      "likes": 4,
+      "type": "Steel"
+    },
+    {
+      "id": 11,
+      "name": "Zoroark",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/571.png",
+      "likes": 5,
+      "type": "Dark"
     }
   ]
 }
