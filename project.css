@@ -1,21 +1,22 @@
 .image {
-    width: 150px;
-    height: 100px;
+    width: 10vw;
+    height: auto;
     padding: 40px;
 }
+
 .title {
     align-items: center;
-    font-family: 'Times New Roman', Times, serif;  
-    background-color: rgb(226, 70, 43);                            
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(226, 70, 43);
 }
 
 .row {
     display: flex;
-    flex-direction: row;   
+    flex-direction: row;
 }
 
 .row.centered {
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .card {
@@ -23,16 +24,16 @@
     border: grey solid 1px;
     padding: 1rem;
     width: 15rem;
-    height: 25rem;
     display: inline-grid;
     margin: 1rem 2rem;
-    box-shadow: 3px 4px #e04b52
+    box-shadow: 3px 4px #2906f0
 }
 
 .pokemon-avatar {
     justify-self: center;
     height: 12rem;
     width: auto;
+    padding: 1em
 }
 
 button {
@@ -53,3 +54,26 @@ button:hover {
     color: #e04b52;
 }
 
+form, .bubble {
+    padding: 2rem;
+    background-color: #2906f0;
+    border-radius: 1rem;
+    margin: .5rem;
+    width: fit-content;
+
+}
+
+.subtitle {
+    padding: 1em;
+    font-family: monospace;
+    color: white;
+    font-weight: 700;
+}
+
+input, select{
+    width: inherit;
+    padding: 8px;
+    border-radius: 99999px;
+    margin-bottom: .5rem;
+
+}
