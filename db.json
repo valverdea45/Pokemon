@@ -132,6 +132,27 @@
       "likes": 12,
       "type": "Dark",
       "id": 19
+    },
+    {
+      "name": "Beyonce",
+      "image": "https://www.amny.com/wp-content/uploads/2022/11/AP22319218604356.jpg",
+      "likes": 4,
+      "type": "Queen",
+      "id": 20
+    },
+    {
+      "name": "Beyonce",
+      "image": "https://media.pitchfork.com/photos/6373c412803a5133b360f3cd/master/pass/Beyonce-Grammys.jpg",
+      "likes": 3,
+      "type": "Queen",
+      "id": 21
+    },
+    {
+      "name": "Jigglepuff",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/039.png",
+      "likes": 0,
+      "type": "Fairy",
+      "id": 22
     }
   ]
 }

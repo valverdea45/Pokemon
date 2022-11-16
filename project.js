@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Dom has loaded")
 
+    const pokemonContainer = document.querySelector("#Pokemon-collection")
+    const dropDownContainer = document.querySelector("#pokemon-dropdown")
+    
     fetch("http://localhost:3000/Pokemon")
         .then((data) => data.json())
         .then((allPokemon) => {
@@ -12,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     function createNewCard(singlePokemon) {
         const singleCard = document.createElement("div")
-        const pokemonContainer = document.querySelector("#Pokemon-collection")
         const nameOfPokemonOnCard = document.createElement("h2")
         const btnOnCard = document.createElement("button")
         const imgOnCard = document.createElement("img")
@@ -64,8 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const typeInput = document.querySelector("#pokemonType")
          
             const objToBeSent = {
-                id: Date.now, 
-                //allPokemon.length + 1,
                 name: `${nameInput.value}`,
                 image: imgInput.value,
                 likes: 0,
@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }   
             const newList = allPokemon.concat(objToBeSent)
             updateDropDownWindow(newList)
+
             dropDown(newList)
             
             fetch(`http://localhost:3000/Pokemon`, {
@@ -92,12 +93,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     function updateCards(allPokemon) {
-        const pokemonContainer = document.querySelector("#Pokemon-collection")
         removeChildren(pokemonContainer)
         allPokemon.forEach(createNewCard)
     }
     function updateDropDownWindow(allPokemon) {
-        const dropDownContainer = document.querySelector("#pokemon-dropdown")
         removeChildren(dropDownContainer)
         const pokemonTypes = allPokemon.map((pokemon) => {
             return pokemon.type
