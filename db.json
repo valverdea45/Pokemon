@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Mew",
       "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/151.png",
-      "likes": 16,
+      "likes": 29,
       "type": "Psychic"
     },
     {
@@ -32,7 +32,7 @@
       "id": 5,
       "name": "Mudkip",
       "image": "https://static.wikia.nocookie.net/pokemon/images/3/32/258Mudkip_AG_anime_2.png/revision/latest/scale-to-width-down/250?cb=20150102063741",
-      "likes": 10037,
+      "likes": 10059,
       "type": "Water"
     },
     {
@@ -46,7 +46,7 @@
       "id": 7,
       "name": "Arceus",
       "image": "https://archives.bulbagarden.net/media/upload/thumb/f/fc/493Arceus.png/1200px-493Arceus.png",
-      "likes": 0,
+      "likes": 3,
       "type": "Normal"
     },
     {
@@ -60,7 +60,7 @@
       "id": 9,
       "name": "Sylveon",
       "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/700.png",
-      "likes": 5,
+      "likes": 24,
       "type": "Fairy"
     },
     {
@@ -74,8 +74,64 @@
       "id": 11,
       "name": "Zoroark",
       "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/571.png",
-      "likes": 5,
+      "likes": 7,
       "type": "Dark"
+    },
+    {
+      "id": 12,
+      "name": "Cyndaquil",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/155.png",
+      "likes": 61,
+      "type": "Fire"
+    },
+    {
+      "id": 13,
+      "name": "Zorua",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/570.png",
+      "likes": 0,
+      "type": "Dark"
+    },
+    {
+      "id": 14,
+      "name": "bulbasaur",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
+      "likes": 0,
+      "type": "Grass"
+    },
+    {
+      "name": "Mewtwo",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png",
+      "likes": 0,
+      "type": "Psychic",
+      "id": 15
+    },
+    {
+      "name": "Ditto",
+      "image": "https://archives.bulbagarden.net/media/upload/thumb/3/36/132Ditto.png/250px-132Ditto.png",
+      "likes": 8,
+      "type": "Normal",
+      "id": 16
+    },
+    {
+      "name": "Eevee",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/133.png",
+      "likes": 5,
+      "type": "Normal",
+      "id": 17
+    },
+    {
+      "name": "Glaceon",
+      "image": "https://img.pokemondb.net/artwork/large/glaceon.jpg",
+      "likes": 0,
+      "type": "Ice",
+      "id": 18
+    },
+    {
+      "name": "Umbreon",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/197.png",
+      "likes": 12,
+      "type": "Dark",
+      "id": 19
     }
   ]
 }

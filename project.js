@@ -64,7 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const typeInput = document.querySelector("#pokemonType")
          
             const objToBeSent = {
-                id: allPokemon.length + 1,
+                id: Date.now, 
+                //allPokemon.length + 1,
                 name: `${nameInput.value}`,
                 image: imgInput.value,
                 likes: 0,
@@ -76,10 +77,10 @@ document.addEventListener("DOMContentLoaded", () => {
             
             fetch(`http://localhost:3000/Pokemon`, {
                 method: `POST`,
-                headers: {
+                headers:{
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(objToBeSent)
+                body:JSON.stringify(objToBeSent)
             })
                 .then(data => data.json())
                 .then(pokemon => createNewCard(pokemon))
