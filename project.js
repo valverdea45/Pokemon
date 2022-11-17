@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const pokemonContainer = document.querySelector("#Pokemon-collection")
     const dropDownContainer = document.querySelector("#pokemon-dropdown")
-    
+    const dropDownElement = document.querySelector("#pokemon-dropdown")
+
     fetch("http://localhost:3000/Pokemon")
         .then((data) => data.json())
         .then((allPokemon) => {
@@ -118,11 +119,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
     function dropDown(allPokemon) {
-        const dropDownElement = document.querySelector("#pokemon-dropdown")
         dropDownElement.addEventListener("change", (e) => {
             if (e.target.value === "All Types") {
-                updateCards(allPokemon)
-                return
+               return updateCards(allPokemon)
             }
             const filteredTypes = allPokemon.filter((pokemon) => {
                 return pokemon.type === e.target.value
