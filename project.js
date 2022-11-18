@@ -1,3 +1,4 @@
+// Event Listener #1
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Dom has loaded")
 
@@ -11,38 +12,60 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("All pokemon have loaded")
             updateCards(allPokemon)
             updateDropDownWindow(allPokemon)
-            dropDown(allPokemon)
+            dropDownFilter(allPokemon)
+            //createYourOwn function needs allPokemon so it can update dropdown window with new types
+            // once new pokemon are created 
             createYourOwn(allPokemon)
         })
     function createNewCard(singlePokemon) {
         const singleCard = document.createElement("div")
         const nameOfPokemonOnCard = document.createElement("h2")
-        const btnOnCard = document.createElement("button")
+        const likeBtnOnCard = document.createElement("button")
         const imgOnCard = document.createElement("img")
         const likesOnCard = document.createElement("p")
         const typeOnCard = document.createElement("p")
+        // const favoriteBtnOnCard = document.createElement("button")
 
         singleCard.classList.add("card")
         singleCard.appendChild(nameOfPokemonOnCard)
-        singleCard.appendChild(btnOnCard)
+        singleCard.appendChild(likeBtnOnCard)
         singleCard.appendChild(imgOnCard)
         singleCard.appendChild(likesOnCard)
         singleCard.appendChild(typeOnCard)
-
+        // singleCard.appendChild(favoriteBtnOnCard)
         pokemonContainer.appendChild(singleCard)
+
         typeOnCard.innerHTML = `${singlePokemon.type}`
         nameOfPokemonOnCard.innerHTML = singlePokemon.name
         likesOnCard.innerHTML = `${singlePokemon.likes} like(s)`
         imgOnCard.setAttribute("src", singlePokemon.image)
         imgOnCard.classList.add("pokemon-avatar")
-        btnOnCard.classList.add("like-btn")
-        btnOnCard.setAttribute("id", singlePokemon.id)
-        btnOnCard.innerHTML = "Give them a like!"
-        btnOnCard.addEventListener("click", () => {
+        likeBtnOnCard.classList.add("like-btn")
+        likeBtnOnCard.innerHTML = "Give them a like!"
+        likeBtnOnCard.addEventListener("click", () => {
             singlePokemon.likes += 1
             likesOnCard.innerHTML = `${singlePokemon.likes} like(s)`
             updateLikes(singlePokemon)
         })
+
+        // if (singlePokemon.favorite === false) {
+        //     favoriteBtnOnCard.innerHTML = "Favorite Pokemon"
+        // } else {
+        //     favoriteBtnOnCard.innerHTML = "This is your favorite!"
+        // }
+
+        // favoriteBtnOnCard.addEventListener("click", () => {
+        //     if (singlePokemon.favorite === false) {
+        //         singlePokemon.favorite = true
+        //         favoriteBtnOnCard.innerHTML = "This is your favorite!"
+        //         updateFavorite(singlePokemon)
+        //     } else {
+        //         singlePokemon.favorite = false
+        //         favoriteBtnOnCard.innerHTML = "Favorite Pokemon"
+        //         updateFavorite(singlePokemon)
+        //     }
+        // })
+
     }
     function updateLikes(singlePokemon) {
         fetch(`http://localhost:3000/Pokemon/${singlePokemon.id}`, {
@@ -58,34 +81,56 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(data => data.json())
             .then(pokemon => console.log(pokemon))
     }
+
+    // function updateFavorite(singlePokemon) {
+    //     fetch(`http://localhost:3000/Pokemon/${singlePokemon.id}`, {
+    //         method: "PATCH",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //             Accept: "application/json"
+    //         },
+    //         body: JSON.stringify({
+    //             "favorite": singlePokemon.favorite
+    //         })
+    //     })
+    //         .then(data => data.json())
+    //         .then(pokemon => console.log(pokemon))
+
+    // }
+
     function createYourOwn(allPokemon) {
         const formInput = document.querySelector("#form")
+        //Event Listener #2
         formInput.addEventListener("submit", (e) => {
             e.preventDefault()
             const nameInput = document.querySelector("#pokemonName")
             const imgInput = document.querySelector("#pokemonImg")
             const typeInput = document.querySelector("#pokemonType")
-         
+
             const objToBeSent = {
                 name: `${nameInput.value}`,
                 image: imgInput.value,
                 likes: 0,
-                type: typeInput.value
-            }   
-            const newList = allPokemon.concat(objToBeSent)
-            updateDropDownWindow(newList)
+                type: typeInput.value,
+                favorite: false
+            }
 
-            dropDown(newList)
-            
+
             fetch(`http://localhost:3000/Pokemon`, {
                 method: `POST`,
-                headers:{
+                headers: {
                     'Content-Type': 'application/json'
                 },
-                body:JSON.stringify(objToBeSent)
+                body: JSON.stringify(objToBeSent)
             })
                 .then(data => data.json())
-                .then(pokemon => createNewCard(pokemon))
+                .then(pokemon => {
+                    createNewCard(pokemon)
+                    const newList = allPokemon.concat(objToBeSent)
+                    updateDropDownWindow(newList)
+                    dropDownFilter(newList)
+                })
+            formInput.reset()
         })
     }
     function removeChildren(container) {
@@ -95,6 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     function updateCards(allPokemon) {
         removeChildren(pokemonContainer)
+        // array iteration # 2
         allPokemon.forEach(createNewCard)
     }
     function updateDropDownWindow(allPokemon) {
@@ -105,24 +151,40 @@ document.addEventListener("DOMContentLoaded", () => {
         const typeSet = new Set(pokemonTypes)
         const types = Array.from(typeSet)
 
-        const singleOption = document.createElement("option")
-        singleOption.innerHTML = `All Types`
-        dropDownContainer.appendChild(singleOption)
+        const singleOptionForAllTypes = document.createElement("option")
+        singleOptionForAllTypes.innerHTML = `All Types`
+        dropDownContainer.appendChild(singleOptionForAllTypes)
+
+        // const singleOptionForAllFavorites = document.createElement("option")
+        // singleOptionForAllFavorites.innerHTML = `All Favorites`
+        // dropDownContainer.appendChild(singleOptionForAllFavorites)
 
         types.forEach((singleType) => {
-            const singleOption = document.createElement("option")
-            singleOption.innerHTML = `${singleType}`
-            dropDownContainer.appendChild(singleOption)
+            const singleOptionForAllTypes = document.createElement("option")
+            singleOptionForAllTypes.innerHTML = `${singleType}`
+            dropDownContainer.appendChild(singleOptionForAllTypes)
 
         })
 
 
     }
-    function dropDown(allPokemon) {
+    function dropDownFilter(allPokemon) {
+        // event listener #3
         dropDownElement.addEventListener("change", (e) => {
             if (e.target.value === "All Types") {
-               return updateCards(allPokemon)
+                return updateCards(allPokemon)
             }
+            
+            // if (e.target.value === "All Favorites") {
+            //     const filteredFavorite = allPokemon.filter((pokemon) => {
+            //         return pokemon.favorite === true
+            //     })
+            //     console.log(filteredFavorite)
+            //     updateCards(filteredFavorite)
+            // }
+
+            // array iteration method #1
+
             const filteredTypes = allPokemon.filter((pokemon) => {
                 return pokemon.type === e.target.value
             })
