@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const pokemonContainer = document.querySelector("#Pokemon-collection")
     const dropDownContainer = document.querySelector("#pokemon-dropdown")
     const dropDownElement = document.querySelector("#pokemon-dropdown")
+    const form = document.querySelector("#form")
 
     fetch("http://localhost:3000/Pokemon")
         .then((data) => data.json())
@@ -99,9 +100,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // }
 
     function createYourOwn(allPokemon) {
-        const formInput = document.querySelector("#form")
+        
         //Event Listener #2
-        formInput.addEventListener("submit", (e) => {
+        form.addEventListener("submit", (e) => {
             e.preventDefault()
             const nameInput = document.querySelector("#pokemonName")
             const imgInput = document.querySelector("#pokemonImg")
@@ -130,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     updateDropDownWindow(newList)
                     dropDownFilter(newList)
                 })
-            formInput.reset()
+            form.reset()
         })
     }
     function removeChildren(container) {
@@ -191,4 +192,42 @@ document.addEventListener("DOMContentLoaded", () => {
             updateCards(filteredTypes)
         })
     }
+    // user wants:
+    // a button
+    // when button is clicked the following happens
+    // the create new pokemon form pops up
+    // a new button comes up to go back to original btn
+
+    // how to create:
+    // add hide class to form
+    // create button in java script
+    // append button
+    // add click event
+    // when clicked removes hide class
+    // updates dom with the form and new button
+    // when new button is clicked either updates with original button
+    // or add the hide class back to the form
+
+    
+    // form.classList.add("hide") 
+    // const originalBtn = document.createElement("button")
+    // originalBtn.innerHTML = "Create your own!!!!"
+    // const formContainer = document.querySelector("#form-container")
+    // formContainer.appendChild(originalBtn)
+    // originalBtn.addEventListener("click", () => {
+    //     form.classList.remove("hide")
+    //     originalBtn.classList.add("hide")
+    // })
+
+    // const newBtn = document.createElement("button")
+    // newBtn.innerHTML = "X"
+
+    // form.appendChild(newBtn)
+    
+    // newBtn.addEventListener("click", () => {
+    //     form.classList.add("hide")
+    //     originalBtn.classList.remove("hide")
+    // })
+
+
 })

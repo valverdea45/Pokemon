@@ -139,7 +139,7 @@
     {
       "name": "Glaceon",
       "image": "https://img.pokemondb.net/artwork/large/glaceon.jpg",
-      "likes": 0,
+      "likes": 20000100,
       "type": "Ice",
       "id": 18,
       "favorite": true
@@ -235,10 +235,26 @@
     {
       "name": "Staraptor",
       "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/398.png",
-      "likes": 0,
+      "likes": 7,
       "type": "Flying",
       "favorite": true,
       "id": 30
+    },
+    {
+      "name": "",
+      "image": "",
+      "likes": 0,
+      "type": "",
+      "favorite": false,
+      "id": 31
+    },
+    {
+      "name": "Articuno",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/144.png",
+      "likes": 0,
+      "type": "Ice",
+      "favorite": false,
+      "id": 32
     }
   ]
 }
