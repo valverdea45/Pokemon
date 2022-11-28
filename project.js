@@ -17,6 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
             //createYourOwn function needs allPokemon so it can update dropdown window with new types
             // once new pokemon are created 
             createYourOwn(allPokemon)
+            const newBtn = document.createElement("button")
+            newBtn.innerHTML = "Sort By Likes"
+            form.appendChild(newBtn)
+
+            newBtn.addEventListener("click", () => {
+                updateCards(allPokemon.sort((a, b) => a.likes - b.likes))
+            })
         })
     function createNewCard(singlePokemon) {
         const singleCard = document.createElement("div")
@@ -100,7 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // }
 
     function createYourOwn(allPokemon) {
-        
         //Event Listener #2
         form.addEventListener("submit", (e) => {
             e.preventDefault()
@@ -175,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (e.target.value === "All Types") {
                 return updateCards(allPokemon)
             }
-            
+
             // if (e.target.value === "All Favorites") {
             //     const filteredFavorite = allPokemon.filter((pokemon) => {
             //         return pokemon.favorite === true
@@ -208,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // when new button is clicked either updates with original button
     // or add the hide class back to the form
 
-    
+
     // form.classList.add("hide") 
     // const originalBtn = document.createElement("button")
     // originalBtn.innerHTML = "Create your own!!!!"
@@ -223,11 +229,33 @@ document.addEventListener("DOMContentLoaded", () => {
     // newBtn.innerHTML = "X"
 
     // form.appendChild(newBtn)
-    
+
     // newBtn.addEventListener("click", () => {
     //     form.classList.add("hide")
     //     originalBtn.classList.remove("hide")
     // })
 
 
+    //Live code challange attempt one
+    // Failed
+
+    // Prompt: given the HTML bellow take the input from the form 
+    //and append it to the dom
+
+    
+
+
+    const commentInput = document.querySelector("#comment")
+    const testForm = document.querySelector("#comment-form")
+    testForm.addEventListener("submit", (e) => {
+        e.preventDefault()
+        const comment = commentInput.value
+        const newNode = document.createElement("h3")
+        newNode.innerText = comment
+        testForm.appendChild(newNode)
+    })
+
+
 })
+
+

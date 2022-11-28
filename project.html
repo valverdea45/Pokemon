@@ -9,17 +9,17 @@
 
 <body>
     <div class="title row centered">
-        <img src="https://www.freeiconspng.com/thumbs/pokeball-png/pokeball-transparent-png-2.png"
-            class="image" />
+        <img src="https://www.freeiconspng.com/thumbs/pokeball-png/pokeball-transparent-png-2.png" class="image" />
         <div>
             <h1>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png" class="image" style="width:20vw"/>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png"
+                    class="image" style="width:20vw" />
             </h1>
             <h1 class="row centered subtitle">Gotta Catch 'Em All!!!</h1>
         </div>
 
 
-        <img src="https://www.freeiconspng.com/thumbs/pokeball-png/pokeball-transparent-png-2.png"class="image" />
+        <img src="https://www.freeiconspng.com/thumbs/pokeball-png/pokeball-transparent-png-2.png" class="image" />
 
     </div>
     <div class="row centered" id="form-container">
@@ -28,29 +28,39 @@
             <div>
                 <div class="subtitle" style="font-size: 25px; margin-bottom: .5rem; padding: 4px">Add a Pokemon!</div>
                 <br>
-                <input type="text" name="name" id="pokemonName" value="" placeholder="Enter pokemon's name..."/>
+                <input type="text" name="name" id="pokemonName" value="" placeholder="Enter pokemon's name..." />
             </div>
 
             <div>
-                <input type="text" name="name" id="pokemonImg" value="" placeholder="Enter pokemon's url...."/>
+                <input type="text" name="name" id="pokemonImg" value="" placeholder="Enter pokemon's url...." />
             </div>
 
             <div>
-                <input type="text" name="name" id="pokemonType" value="" placeholder="Enter pokemon's type...."/>
+                <input type="text" name="name" id="pokemonType" value="" placeholder="Enter pokemon's type...." />
             </div>
 
             <div>
                 <input type="submit" name="submit">
             </div>
-        </form>    
+        </form>
+
     </div>
     <div class="bubble subtitle">
         <label for="select-type">Filter By Type:</label>
-    <select id="pokemon-dropdown" name="select-type">
-      <option value="Default">All types</option>
-      <option value="All Favorites">All Favoites</option>
-    </select>
+        <select id="pokemon-dropdown" name="select-type">
+            <option value="Default">All types</option>
+            <option value="All Favorites">All Favoites</option>
+        </select>
     </div>
+
+    <form id="comment-form">
+        <label for="comment">Add Comment</label>
+        <input type="text" id="comment" name="comment">
+        <input type="submit">
+    </form>
+    
     <div id="Pokemon-collection"></div>
+    
 </body>
+
 </html>
